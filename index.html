@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Pakistan – Discover breathtaking valleys, mountains, beaches & culture. Book tours, hotels & packages with Pakistan's most trusted travel company." />
+  <meta name="keywords" content="Pakistan tourism, Hunza Valley, Skardu, Fairy Meadows, Naran Kaghan, Swat Valley, travel packages" />
+  <meta name="author" content="Explore Pakistan" />
+  <!-- CSP & Security Headers via meta -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <title>Explore Pakistan – Discover the Beauty of Pakistan</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo" aria-label="Explore Pakistan Home">
+      <i class="fas fa-mountain"></i>
+      <span>Explore <strong>Pakistan</strong></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu" role="list">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#destinations" class="nav-link">Destinations</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#booking" class="nav-link nav-cta">Book Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="hero" id="home" aria-label="Hero section">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1920&q=80" alt="Majestic mountains of Pakistan's northern areas" class="hero-img" loading="eager" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-star"></i> Pakistan's #1 Travel Agency
+    </div>
+    <h1 class="hero-title">Discover the <span class="accent">Beauty</span> of Pakistan</h1>
+    <p class="hero-desc">From the towering peaks of the Karakoram to the turquoise lakes of Azad Kashmir, Pakistan's landscapes are among the world's most awe-inspiring. Let us guide you through this extraordinary land.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn btn-primary">
+        <i class="fas fa-compass"></i> Plan Your Trip
+      </a>
+      <a href="#destinations" class="btn btn-ghost">
+        <i class="fas fa-map-marker-alt"></i> View Destinations
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><strong>10,000+</strong><span>Happy Travelers</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><strong>500+</strong><span>Tours Done</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><strong>8+</strong><span>Years Experience</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ===================== DESTINATIONS ===================== -->
+<section class="section" id="destinations" aria-label="Featured destinations">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Where to Go</span>
+      <h2 class="section-title">Featured <span class="accent">Destinations</span></h2>
+      <p class="section-desc">Pakistan is home to some of the world's most spectacular scenery. Explore our hand-picked destinations.</p>
+    </div>
+    <div class="destinations-grid" id="destinationsGrid">
+      <!-- Destination cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DESTINATION MODAL ===================== -->
+<div class="modal-overlay" id="destModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close destination details">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="section section-alt" id="services" aria-label="Our services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">What We Offer</span>
+      <h2 class="section-title">Our <span class="accent">Services</span></h2>
+      <p class="section-desc">Tailored travel experiences crafted for every kind of adventurer.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section about-section" id="about" aria-label="About us">
+  <div class="container about-container">
+    <div class="about-image-col">
+      <img src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=800&q=80" alt="Pakistan landscape showing lush valley" class="about-img lazy" loading="lazy" />
+      <div class="about-badge-card">
+        <span class="ab-num">8+</span>
+        <span class="ab-label">Years of Excellence</span>
+      </div>
+    </div>
+    <div class="about-text-col">
+      <span class="section-eyebrow">Our Story</span>
+      <h2 class="section-title">Passionate About <span class="accent">Pakistan</span></h2>
+      <p>Founded in 2016 in Quetta, Balochistan, Explore Pakistan was born from a deep love for this extraordinary country. We've spent years curating authentic experiences that connect travelers with Pakistan's landscapes, people, and culture.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <i class="fas fa-bullseye"></i>
+          <div>
+            <strong>Our Mission</strong>
+            <p>To showcase Pakistan's unparalleled beauty through safe, sustainable, and unforgettable travel experiences.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <i class="fas fa-eye"></i>
+          <div>
+            <strong>Our Vision</strong>
+            <p>To position Pakistan among the world's top travel destinations by 2030.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-us-grid">
+        <div class="why-item"><i class="fas fa-shield-alt"></i> 100% Safe & Secure</div>
+        <div class="why-item"><i class="fas fa-headset"></i> 24/7 Support</div>
+        <div class="why-item"><i class="fas fa-tag"></i> Best Price Guarantee</div>
+        <div class="why-item"><i class="fas fa-user-tie"></i> Expert Local Guides</div>
+      </div>
+      <div class="about-stats">
+        <div class="astat"><span class="astat-num">10,000+</span><span>Happy Travelers</span></div>
+        <div class="astat"><span class="astat-num">500+</span><span>Tours Completed</span></div>
+        <div class="astat"><span class="astat-num">50+</span><span>Destinations</span></div>
+        <div class="astat"><span class="astat-num">8+</span><span>Years Experience</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="section section-alt" id="gallery" aria-label="Photo gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Visual Journey</span>
+      <h2 class="section-title">Moments from <span class="accent">Pakistan</span></h2>
+      <p class="section-desc">A glimpse of the spectacular scenery waiting for you.</p>
+    </div>
+    <div class="gallery-masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Gallery Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close lightbox">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <img class="lb-img" id="lbImg" src="" alt="" />
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+</div>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section" id="testimonials" aria-label="Customer testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">What Travelers Say</span>
+      <h2 class="section-title">Stories from <span class="accent">Our Guests</span></h2>
+    </div>
+    <div class="testimonials-carousel" id="testimonialsCarousel"></div>
+    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Testimonial navigation"></div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING ===================== -->
+<section class="section section-alt booking-section" id="booking" aria-label="Book a tour">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Ready to Go?</span>
+      <h2 class="section-title">Book Your <span class="accent">Dream Trip</span></h2>
+      <p class="section-desc">Fill in the form and our travel experts will get back to you within 24 hours.</p>
+    </div>
+    <div class="booking-wrapper">
+      <form class="booking-form" id="bookingForm" novalidate aria-label="Tour booking form">
+        <input type="hidden" name="_csrf" id="csrfToken" value="" />
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="bkName">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="bkName" name="name" placeholder="Your full name" required minlength="2" maxlength="60" autocomplete="name" />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkEmail">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="bkEmail" name="email" placeholder="you@example.com" required maxlength="100" autocomplete="email" />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkPhone">Phone Number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="bkPhone" name="phone" placeholder="+92 300 0000000" required maxlength="20" autocomplete="tel" />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkDestination">Destination <span aria-hidden="true">*</span></label>
+            <select id="bkDestination" name="destination" required>
+              <option value="">Select a destination</option>
+              <option value="hunza">Hunza Valley</option>
+              <option value="skardu">Skardu</option>
+              <option value="fairy-meadows">Fairy Meadows</option>
+              <option value="naran">Naran Kaghan</option>
+              <option value="swat">Swat Valley</option>
+              <option value="neelum">Neelum Valley</option>
+              <option value="gwadar">Gwadar Beach</option>
+              <option value="ziarat">Ziarat</option>
+              <option value="custom">Custom Tour</option>
+            </select>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkDate">Travel Date <span aria-hidden="true">*</span></label>
+            <input type="date" id="bkDate" name="date" required />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkTravelers">Number of Travelers <span aria-hidden="true">*</span></label>
+            <select id="bkTravelers" name="travelers" required>
+              <option value="">Select</option>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3-5">3–5 People</option>
+              <option value="6-10">6–10 People</option>
+              <option value="11+">11+ People (Group)</option>
+            </select>
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="bkBudget">Budget per Person</label>
+            <select id="bkBudget" name="budget">
+              <option value="">Select budget</option>
+              <option value="economy">Economy (Under PKR 20,000)</option>
+              <option value="standard">Standard (PKR 20k–50k)</option>
+              <option value="premium">Premium (PKR 50k–100k)</option>
+              <option value="luxury">Luxury (PKR 100k+)</option>
+            </select>
+          </div>
+          <div class="form-group form-full">
+            <label for="bkMessage">Special Requests</label>
+            <textarea id="bkMessage" name="message" rows="3" placeholder="Any special requirements, dietary needs, or questions..." maxlength="500"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-paper-plane"></i> Send Booking Request
+        </button>
+        <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</p>
+      </form>
+      <div class="booking-success" id="bookingSuccess" hidden aria-live="assertive">
+        <i class="fas fa-check-circle"></i>
+        <h3>Booking Request Received!</h3>
+        <p>Thank you! Our travel experts will contact you within 24 hours to confirm your trip.</p>
+        <button class="btn btn-primary" id="bookingReset">Plan Another Trip</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section section-alt" id="contact" aria-label="Contact us">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Get in Touch</span>
+      <h2 class="section-title">Contact <span class="accent">Us</span></h2>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="cinfo-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Our Office</strong>
+            <p>Jinnah Road, Quetta, Balochistan, Pakistan</p>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+92819000000">+92 81 9000000</a>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:info@explorepakistan.pk">info@explorepakistan.pk</a>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" class="wa-btn">
+              Chat with Us on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="TikTok" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <!-- Map Embed -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54476.7398984305!2d66.96558!3d30.18414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ed2fd45a0536fb7%3A0xb92c8b45b7a3e11c!2sQuetta%2C%20Balochistan%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000"
+            width="100%" height="220" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Explore Pakistan Office Location">
+          </iframe>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+        <input type="hidden" name="_csrf" value="" />
+        <div class="form-group">
+          <label for="ctName">Your Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="ctName" name="name" placeholder="Full name" required minlength="2" maxlength="60" autocomplete="name" />
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="ctEmail">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="ctEmail" name="email" placeholder="you@example.com" required maxlength="100" autocomplete="email" />
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="ctPhone">Phone</label>
+          <input type="tel" id="ctPhone" name="phone" placeholder="+92 300 0000000" maxlength="20" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label for="ctMessage">Message <span aria-hidden="true">*</span></label>
+          <textarea id="ctMessage" name="message" rows="5" placeholder="How can we help you?" required maxlength="1000"></textarea>
+          <span class="field-error" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div class="contact-success" id="contactSuccess" hidden aria-live="assertive">
+          <i class="fas fa-check-circle"></i> Message sent! We'll reply within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <i class="fas fa-mountain"></i> Explore <strong>Pakistan</strong>
+        </a>
+        <p>Pakistan's most trusted travel company, helping you discover the world's greatest untouched landscapes since 2016.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Destinations</h4>
+        <ul>
+          <li><a href="#destinations">Hunza Valley</a></li>
+          <li><a href="#destinations">Skardu</a></li>
+          <li><a href="#destinations">Fairy Meadows</a></li>
+          <li><a href="#destinations">Naran Kaghan</a></li>
+          <li><a href="#destinations">Swat Valley</a></li>
+          <li><a href="#destinations">Gwadar Beach</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Tour Packages</a></li>
+          <li><a href="#services">Hotel Booking</a></li>
+          <li><a href="#services">Transport Rental</a></li>
+          <li><a href="#services">Adventure Tours</a></li>
+          <li><a href="#services">Corporate Tours</a></li>
+          <li><a href="#services">Custom Planning</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> Jinnah Road, Quetta, Balochistan</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+92819000000">+92 81 9000000</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:info@explorepakistan.pk">info@explorepakistan.pk</a></li>
+          <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923001234567" target="_blank" rel="noopener">WhatsApp Chat</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 Explore Pakistan. All rights reserved. | Designed with <i class="fas fa-heart" style="color:#e74c3c"></i> in Quetta</p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a> · <a href="#">Cookie Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
